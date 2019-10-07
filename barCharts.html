@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<head>
+	<title>Ledger Visualisations</title>
+	<link rel="stylesheet" href="./static/lib/css//bootstrap.min.css">
+	<link rel="stylesheet" href="./static/lib/css/keen-dashboards.css">
+	<link rel="stylesheet" href="./static/lib/css/dc.css">
+	<link rel="stylesheet" href="./static/css/custom.css">
+
+	<link rel="shortcut icon" href="{{url_for('static', filename='favicon.ico') }}">
+</head>
+
+<script src="./static/lib/js/jquery.min.js"></script>
+<script src="./static/lib/js/bootstrap.min.js"></script>
+<script src="./static/lib/js/crossfilter.js"></script>
+<script src="./static/lib/js/d3.js"></script>
+<script src="./static/lib/js/dc.js"></script>
+<script src="./static/lib/js/queue.js"></script>
+
+<script src="./static/lib/js/keen.min.js"></script>
+
+<script src='./static/js/graphDate.js' type="text/javascript"></script>
+<script src='./static/js/graphPub.js' type="text/javascript"></script>
+<script src='./static/js/graphLang.js' type="text/javascript"></script>
+<script src='./static/js/graphFire.js' type="text/javascript"></script>
+
+
+<body class="application" onresize="changeWidth()">
+
+	<script type="text/javascript">
+		function changeWidth() 
+		{
+			changeDateWidth();
+			changePubWidth();
+			changeLangWidth();
+			changeFireWidth();
+		}
+	</script>
+
+	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="./">Innerpeffray Ledgers Bar Chart Visualisations</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="container-fluid">
+
+		<div class="row">
+			<div class="col-sm-12 col-md-12">
+				<div class="row">
+					<!-- Bar Charts-->
+					<div class="col-sm-12 col-md-12">
+						<div class="chart-wrapper">
+
+							<div id="dateResize">
+								<div class="chart-title">
+									<u>Dates of Books Writing</u>
+
+									<p>This chart shows the number of books written each year from 1500 to 1800. An important conclusion that can be drawn
+										here is the two explosions of growth that occur are around the years 1620 and 1715, the two years that form the
+										, debated, lower bounds of the age on enlightenment</p>
+									<button class="button" id="btnFivetoSix" onclick="moveRangeDate(1)">1500-1600</button>
+									<button class="button" id="btnSixtoSeven" onclick="moveRangeDate(2)">1600-1700</button>
+									<button class="button" id="btnSeventoEight" onclick="moveRangeDate(3)">1700-1800</button>
+									<button class="button" id="btnFull" onclick="moveRangeDate(4)">1500-1800</button>
+								</div>
+							</div>
+							<div class="chart-stage">
+								<div id="dates-chart"></div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Publication table-->
+					<!-- Language of Books-->
+					<div class="col-sm-12 col-md-12">
+						<div class="chart-wrapper">
+							<div class="chart-title">
+								<u>Books Published In London Between 1600 and 1700</u>
+
+								<p>This chart shows the number of books published in London between 1600 and 1700. Two interesting conclusions that
+									can be drawn from this chart is two dips in the number of books published a year.</p>
+
+								<p>The first could be a coicidence but it's novelty justifies its inclusion as in 1666, the year of the Great Fire of
+									London, there were no books published in London suggesting a major disruption to normal city life caused by aforementioned
+									great fire.</p>
+
+								<p>The second is a little more concrete, there is a major dip in the number of books published in the years following
+									1687. An argument can be made that the <a href="https://en.wikipedia.org/wiki/Glorious_Revolution">Glorious Revolution of 1688</a> and the subsequent <a href="https://en.wikipedia.org/wiki/Jacobite_rising_of_1689">Jacobite rebellions</a> and <a href="https://en.wikipedia.org/wiki/Nine_Years%27_War">war with France</a> are the cause of this dip in book publications.</p>
+
+							</div>
+
+							<div class="chart-stage">
+								<div id="fire-chart"></div>
+							</div>
+						</div>
+					</div>1
+
+					<!-- Language of Books-->
+					<div class="col-sm-12 col-md-12">
+						<div class="chart-wrapper">
+							<div class="chart-title">
+								<u>Language of Books</u>
+
+								<p>This chart shows what language each book was written in. There's no real suprise that English and Latin are the two
+									dominant languages. At the time most religious services and texts were in Latin and not the vernacular language
+									of wherever the sermon was taking place or the text's place of publication. This change to the Catholic doctrine
+									would only occur after the Second Ecumenical Council of the Vatican in 1962.</p>
+
+								<button class="button" id="btnEnglish" onclick="moveRangeLang(1)">English Language Included</button>
+								<button class="button" id="btnNoEnglish" onclick="moveRangeLang(2)">English Language Not Included</button>
+							</div>
+
+							<div class="chart-stage">
+								<div id="lang-chart"></div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+				<!--End of Local Row-->
+			</div>
+			<!--End of Local Column-->
+			<div class="col-sm-12 col-md-12">
+				<div class="chart-wrapper">
+					<div id="pubResize">
+						<div class="chart-title">
+							<u>Place of Publicaiton</u>
+
+							<p>!Alexander the Greek !Alexander the Greek !Alexander the Greek !Alexander the Greek !Alexander the Greek !Alexander
+								the Greek !Alexander the Greek !Alexander the Greek !Alexander the Greek !Alexander the Greek !Alexander the Greek
+								!Alexander the Greek</p>
+
+							<button class="button" id="btnLondon" onclick="moveRangePub(1)">London Included</button>
+							<button class="button" id="btngreatFireOfLondon" onclick="moveRangePub(2)">London Not Included</button>
+						</div>
+
+						<div class="chart-stage">
+							<div id="publication-chart"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<!--End of Local Row-->
+	</div>
+	<!--End of Local Column-->
+
+	</div>
+	<!--End of Full Row-->
+
+	</div>
+
+</body>

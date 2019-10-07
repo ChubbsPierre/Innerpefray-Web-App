@@ -1,0 +1,218 @@
+#innPic
+{
+	max-width: 250px;
+	max-height: 250px;
+}
+
+.chart-stage
+{
+	background-color:vc#F0FFFF;
+}
+
+.row
+{
+	background-color: #D3D3D3;
+}
+
+#number-projects-nd 
+{
+    font-size: 60px;
+}
+
+#total-donations-nd 
+{
+    font-size: 60px;
+}
+
+.dc-chart g.row text 
+{
+    fill: black;
+    font-size: 12px;
+}
+
+.dc-chart text.pie-slice
+{
+	fill: black;
+}
+
+.dateResize	
+{
+	width: 100%;
+	height: 500px;
+}
+
+#dates-chart
+{
+	clear: both;
+	width: 100%;
+}
+
+.pubResize	
+{
+	width: 100%;
+	height: 500px;
+}
+
+#publication-chart
+{
+	clear: both;
+	width: 100%;
+}
+
+#homeButton
+{	
+	font-size: 30px;
+	border-radius: 25%;
+	-webkit-transition-duration: 0.4s;
+	transition-duration: 0.4s;
+	position: relative;
+}
+
+#homeButton:hover
+{
+	background-color: white;
+	color: #4CAF50;
+}
+#btngreyScale
+{	
+	font-size: 10px;
+	border-radius: 50%;
+	-webkit-transition-duration: 0.4s;
+	transition-duration: 0.4s;
+	position: relative;
+	left: 5%;
+}
+
+#btngreyScale:hover
+{
+	background-color: white;
+	color: #4CAF50;
+}
+
+#btnFivetoSix
+{	
+	font-size: 16px;
+	border-radius: 50%;
+	-webkit-transition-duration: 0.4s;
+	transition-duration: 0.4s;
+	position: relative;
+	left: 5%;
+}
+
+#btnFivetoSix:hover
+{
+	background-color: white;
+	color: #4CAF50;
+}
+
+#btnSixtoSeven
+{
+	font-size: 16px;
+	border-radius: 50%;
+	-webkit-transition-duration: 0.4s;
+	transition-duration: 0.4s;
+	position: relative;
+	left: 10%;
+}
+
+#btnSixtoSeven:hover
+{
+	background-color: white;
+	color: #4CAF50;
+}
+
+#btnSeventoEight
+{
+	font-size: 16px;
+	border-radius: 50%;
+	-webkit-transition-duration: 0.4s;
+	transition-duration: 0.4s;
+	position: relative;
+	left: 15%;
+}
+
+#btnSeventoEight:hover
+{
+	background-color: white;
+	color: #4CAF50;
+}
+
+#btnFull
+{
+	font-size: 16px;
+	border-radius: 50%;
+	-webkit-transition-duration: 0.4s;
+	transition-duration: 0.4s;
+	position: relative;
+	left: 20%;
+}
+
+#btnFull:hover
+{
+	background-color: #4CAF50;
+	color: white;
+}
+
+#btnEnglish
+{
+	font-size: 16px;
+	border-radius: 35%;
+	-webkit-transition-duration: 0.4s;
+	transition-duration: 0.4s;
+	position: relative;
+	left: 10%;
+}
+
+#btnEnglish:hover
+{
+	background-color: #4CAF50;
+	color: white;
+}
+
+#btnNoEnglish
+{
+	font-size: 16px;
+	border-radius: 35%;
+	-webkit-transition-duration: 0.4s;
+	transition-duration: 0.4s;
+	position: relative;
+	left: 20%;
+}
+
+#btnNoEnglish:hover
+{
+	background-color: #4CAF50;
+	color: white;
+}
+
+#btnLondon
+{
+	font-size: 16px;
+	border-radius: 35%;
+	-webkit-transition-duration: 0.4s;
+	transition-duration: 0.4s;
+	position: relative;
+	left: 10%;
+}
+
+#btnLondon:hover
+{
+	background-color: #4CAF50;
+	color: white;
+}
+
+#btngreatFireOfLondon
+{
+	font-size: 16px;
+	border-radius: 35%;
+	-webkit-transition-duration: 0.4s;
+	transition-duration: 0.4s;
+	position: relative;
+	left: 20%;
+}
+
+#btngreatFireOfLondon:hover
+{
+	background-color: #4CAF50;
+	color: white;
+}

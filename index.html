@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" charset="utf-8" />
+
+<head>
+  <title>Ledger Visualisations</title>
+  <link rel="stylesheet" href="./static/lib/css//bootstrap.min.css">
+  <link rel="stylesheet" href="./static/lib/css/keen-dashboards.css">
+  <link rel="stylesheet" href="./static/css/custom.css">
+
+  <link rel="shortcut icon" href="{{url_for('static', filename='favicon.ico') }}">
+
+</head>
+<script src="./static/lib/js/jquery.min.js"></script>
+<script src="./static/lib/js/bootstrap.min.js"></script>
+
+<script src="./static/lib/js/keen.min.js"></script>
+
+<body class="application">
+
+  <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="./">Innerpeffray Ledgers Visualisations</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+
+    <div class="row" style="text-align: center;">
+
+      <div class="col-sm-12 col-md-12">
+        <div class="intro-wrapper">
+          <div id="innerpeffrayResize">
+            <div class="Innerpeffray-title">
+              <u>The Library of Innerpeffray</u>
+              <p>The Library and School at Innerpeffray were founded by David Drummond 3rd Lord Madertie in around 1680, the
+                first free public lending library in Scotland. Madertie was a member of the Drummond Family, one of the most
+                important landowning families of the area, friend and brother-in-law to James Graham, First Marquis of Montrose.</p>
+
+              <p>The original library was "partly in the west end of the chapel of Innerpeffray and partly in that little new
+                house lately built by me at the east end of the kirk yard. " Making books available to ordinary people free
+                of charge was unprecedented. Madertie wished the library and school to benefit the community "in time coming"
+                and leaving them with a legacy of 5000 Scottish Merks charged his successors with the responsibility.</p>
+
+              <p>In 1739 Robert Hay Drummond inherited the Innerpeffray estate and responsibility for the Library and School.
+                He raised the funds and commissioned architect Charles Freebairn to design and build a new Library building
+                immediately adjacent to the Chapel. This handsome Georgian edifice still houses the library today </p>
+
+              <p>By the nineteenth century the school buildings were 'dilapidated' and a new School and Schoolmasters house
+                were completed in 1846. Pupils came from the surrounding farms and settlements and the school was still in
+                operation until 1946.</p>
+            </div>
+          </div>
+          <div class="picture-stage">
+              <img src="https://anabellibraryworld.files.wordpress.com/2013/08/010.jpg" id="innPic"class="img-rounded" alt="An Image of Innerpeffray Library">
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-12 col-md-12">
+        <div class="intro-wrapper">
+          <div id="ledgerResize">
+            <div class="Ledger-title">
+              <u>The Ledgers of Innerpeffray Library</u>
+              <p>The Borrowers' Register is perhaps the Library's most valuable book, 
+                a handwritten record all the local people to who came to choose a book, and take it home to read. 
+                Today, families from all over the world find their ancestors in the Register, often in their own handwriting, 
+                and can hold the books they borrowed.</p>
+            </div>
+          </div>
+          <div class="picture-stage">
+              <img src="https://www.scotsmagazine.com/wp-content/uploads/sites/7/2016/03/Innerpeffray-carousel.jpg" id="innPic"class="img-rounded" alt="An Image of Innerpeffray Library">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row" style="text-align: center;">
+
+      <div class="col-md-4">
+        <div class="intro-wrapper">
+          <div id="ledgerResize">
+            <div class="Ledger-title">
+              <u>Occupation Chart</u>
+            </div>
+            <div class="row">
+              <form method="get" action="occupationChart">
+                <button type="submit" id="homeButton">Ledger Occupation Chart</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="pieCharts-wrapper">
+          <div id="pieChartsResize">
+            <div class="pieCharts-title">
+              <u>Pie Charts</u>
+              <!-- para about occupation chart-->
+            </div>
+            <div class="row">
+              <form method="get" action="PieCharts">
+                <button type="submit" id="homeButton">Ledger Pie Charts</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="barChart-wrapper">
+          <div id="barChartResize">
+            <div class="barChart-title">
+              <u>Bar Charts</u>
+              <!-- para about occupation chart-->
+            </div>
+            <div class="row">
+              <form method="get" action="BarCharts">
+                <button type="submit" id="homeButton">Ledger Bar Charts</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<head>
+	<title>Ledger Visualisations</title>
+	<link rel="stylesheet" href="./static/lib/css//bootstrap.min.css">
+	<link rel="stylesheet" href="./static/lib/css/keen-dashboards.css">
+	<link rel="stylesheet" href="./static/lib/css/dc.css">
+	<link rel="stylesheet" href="./static/css/custom.css">
+
+	<link rel="shortcut icon" href="{{url_for('static', filename='favicon.ico') }}">
+</head>
+
+<script src="./static/lib/js/jquery.min.js"></script>
+<script src="./static/lib/js/bootstrap.min.js"></script>
+<script src="./static/lib/js/crossfilter.js"></script>
+<script src="./static/lib/js/d3.js"></script>
+<script src="./static/lib/js/dc.js"></script>
+<script src="./static/lib/js/queue.js"></script>
+
+<script src="./static/lib/js/keen.min.js"></script>
+
+<script src='./static/js/graphHandwriting.js' type='text/javascript'></script>
+<script src='./static/js/graphGenre.js' type="text/javascript"></script>
+<script src='./static/js/graphReturn.js' type="text/javascript"></script>
+
+
+<body class="application" onresize="changeWidth()">
+
+	<script type="text/javascript">
+		function changeWidth()
+		{
+			changeHandwritingWidth();
+			changeReturnWidth();
+			changeGenreWidth();
+		}	
+		
+	</script>
+
+	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="./">Innerpeffray Ledgers Pie Chart Visualisations</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="container-fluid">
+
+		<div class="row">
+
+			<div class="col-sm-12 col-md-12">
+				<div class="row">
+
+					<!-- Pie Charts This one measures handwriting-->
+					<div class="col-sm-12 col-md-6">
+						<div class="chart-wrapper">
+							<div id="handwritingResize">
+							<div class="chart-title">
+								<u>Handwriting Chart</u>
+
+								<p>This chart shows who wrote the entry into the ledger. With it either being the librarian or the borrower themself
+									who wrote it. Unfortunately due to the age of the entries it is is unclear who wrote down some of them. </p>
+							
+							</div>
+							<div class="chart-stage">
+								<div id="handwriting-chart"></div>
+							</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Pie Charts This one measures handwriting-->
+					<div class="col-sm-12 col-md-6">
+						<div class="chart-wrapper">
+							<div id="returnResize">
+							<div class="chart-title">
+								<u>Return Status Chart</u>
+
+								<p>Here the different ways in which the books were recorded when returned. This is a chart that doesn't show very much
+									but at the very least it does show that it has been consistant across the centuries that people tend to respect
+									libraries and return the books </p>
+							</div>
+
+							<div class="chart-stage">
+								<div id="return-chart"></div>
+							</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+				<!--End of Local Row-->
+			</div>
+			<!--End of Local Column-->
+		</div>
+		<!--End of Full Row-->
+
+		<div class="row">
+
+			<div class="col-sm-12 col-md-12 ">
+				<div class="row">
+					<!-- Book Generes Pie chart-->
+					<div class="col-sm-12 col-md-12">
+						<div class="chart-wrapper">
+							<div id="genreResize">
+							<div class="chart-title">
+								<u>Genre Chart</u>
+								<button class="button" id="btngreyScale" onclick="setGreyScale()">Toggle Greyscale</button>
+
+								<p>This pie chart shows the book genres that were borrowed from the library. It is striking that the majorty of books
+									borrowed were in some way religious in nature. This shows how big religion was bboth in day to day life and academia</p>
+							</div>
+
+							<div class="chart-stage">
+								<div id="genre-chart"></div>
+							</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--End of Local Row-->
+			</div>
+			<!--End of Local Column-->
+		</div>
+		<!--End of Full Row-->
+	</div>
+</body>
